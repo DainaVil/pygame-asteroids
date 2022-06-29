@@ -18,7 +18,7 @@ class Game:
         self.lives = LIVES
         self.points = 0
 
-        self.bg = pg.image.load('graphic/space.jpeg').convert()
+        self.bg = pg.image.load('graphic/space.jpeg').convert_alpha()
         self.bg = pg.transform.scale(self.bg, (WIDTH, HEIGHT))
         self.screen.blit(self.bg, (0,0))
         self.clock = pg.time.Clock()
@@ -75,8 +75,8 @@ class Game:
                     self.spaceship.stopped=True
 
                 # пускать лазерные лучи :)
-                # if keys[K_SPACE]:
-                #     self.rockets.add(self.spaceship.shoot())
+                if keys[K_SPACE]:
+                    self.rockets.add(self.spaceship.shoot())
 
                 self.spaceship.move(stop=True)
 

@@ -17,5 +17,5 @@ def draw_area(screen, color):
     img = pg.Surface(MENU_SIZE)
     img.fill(color)
     img.set_alpha(100)
-    rect = img.get_rect(center=(WIDTH/2, HEIGHT/2))
+    # rect = img.get_rect(center=(WIDTH/2, HEIGHT/2))
     screen.blit(img, MENU_COODRS)
