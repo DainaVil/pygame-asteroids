@@ -19,7 +19,7 @@ class Asteroid(pg.sprite.Sprite):
         self.image = pg.image.load('graphic/asteroid.png').convert_alpha()
         self.dir = pg.Vector2(uniform(-1, 1), uniform(-1, 1))
         angle = self.dir.angle_to(UP)
-        self.image = pg.transform.rotate(self.image, angle)
+        # self.image = pg.transform.rotate(self.image, angle)
         self.image = pg.transform.scale(self.image, (ASTEROID_SIZE, ASTEROID_SIZE))
         
         self.rect = self.image.get_rect(center=self.coords)
@@ -49,4 +49,4 @@ class Asteroid(pg.sprite.Sprite):
     # проверка на столкновение с другим объектом
     def collides_with(self, other_obj):
         distance = self.coords.distance_to(other_obj.coords)
-        return distance < self.radius + other_obj.radius - 30
+        return distance < self.radius + other_obj.radius - 20
